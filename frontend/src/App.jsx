@@ -7,11 +7,12 @@ import axios from 'axios'
 function App() {
   const [name, setname] = useState('')
   const [marks, setmarks] = useState('')
+  axios.defaults.withCredentials = true ;
   // console.log(name+","+marks)
   const handleSubmit = (e) => {
     // e.prevent.Default();
     
-    axios.post('http://localhost:3001/student',{name,marks})
+    axios.post('https://node-api-back.vercel.app/student',{name,marks})
     .then(result => console.log(result))
     .catch(err => console.log(err))
   }

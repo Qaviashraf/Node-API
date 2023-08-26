@@ -6,12 +6,7 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-
-
-
-
-
-app.get('/student', async (req, res) => {
+app.get('/', async (req, res) => {
     try {
         const student = await Student.find({});
         res.status(200).json(student);

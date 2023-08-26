@@ -4,9 +4,18 @@ const cors = require('cors')
 const Student = require('./Student')
 const app = express()
 app.use(express.json())
-app.use(cors())
+app.use(cors(
+    {
+    origin: ["https://Order-Mangement-System-1whq.vercel.app"],
+    methods: ["Get","Post"],
+    credentials: true
+}
+))
 
-app.get('/', async (req, res) => {
+app.get('/', (req,res)=>{
+    res.json("Hello");
+})
+app.get('/student', async (req, res) => {
     try {
         const student = await Student.find({});
         res.status(200).json(student);

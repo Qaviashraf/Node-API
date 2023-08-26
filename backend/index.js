@@ -6,7 +6,7 @@ const app = express()
 app.use(express.json())
 app.use(cors(
     {
-    origin: ["https://Order-Mangement-System-1whq.vercel.app"],
+    origin: ["https://node-api-front.vercel.app"],
     methods: ["Get","Post"],
     credentials: true
 }
